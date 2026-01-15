@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Pure Node Streaming Server</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <style>
+      * {
+        box-sizing: border-box;
+        font-family: system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+      }
+
+      body {
+        margin: 0;
+        background: #0f172a;
+        color: #e5e7eb;
+        min-height: 100vh;
+      }
+
+      header {
+        padding: 24px;
+        text-align: center;
+        background: #020617;
+        border-bottom: 1px solid #1e293b;
+      }
+
+      header h1 {
+        margin: 0;
+        font-size: 28px;
+      }
+
+      header p {
+        margin-top: 8px;
+        color: #94a3b8;
+      }
+
+      main {
+        max-width: 1000px;
+        margin: 0 auto;
+        padding: 32px 16px;
+        display: grid;
+        gap: 32px;
+      }
+
+      .card {
+        background: #020617;
+        border: 1px solid #1e293b;
+        border-radius: 12px;
+        padding: 20px;
+        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+      }
+
+      .card h2 {
+        margin-top: 0;
+        margin-bottom: 12px;
+        font-size: 20px;
+        color: #f8fafc;
+      }
+
+      video,
+      audio,
+      iframe {
+        width: 100%;
+        border-radius: 8px;
+        border: 1px solid #1e293b;
+        background: black;
+      }
+
+      iframe {
+        height: 400px;
+      }
+
+      footer {
+        text-align: center;
+        padding: 24px;
+        color: #64748b;
+        font-size: 14px;
+      }
+
+      .badge {
+        display: inline-block;
+        background: #1e293b;
+        color: #93c5fd;
+        padding: 4px 10px;
+        border-radius: 999px;
+        font-size: 12px;
+        margin-bottom: 12px;
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <h1>📡 Pure Node.js Streaming Server</h1>
+      <p>Video, Audio & PDF streaming using HTTP Range Requests</p>
+    </header>
+
+    <main>
+      <div class="card">
+        <span class="badge">VIDEO</span>
+        <h2>Stream Video</h2>
+        <video controls src="/stream?file=nature.mp4"></video>
+      </div>
+
+      <div class="card">
+        <span class="badge">AUDIO</span>
+        <h2>Stream Audio</h2>
+        <audio controls src="/stream?file=song.mp3"></audio>
+      </div>
+
+      <div class="card">
+        <span class="badge">PDF</span>
+        <h2>Stream PDF</h2>
+        <iframe src="/stream?file=doc.pdf"></iframe>
+      </div>
+    </main>
+
+    <footer>
+      Built with ❤️ using pure Node.js streams & HTTP Range support
+    </footer>
+  </body>
+</html>
